@@ -33,7 +33,8 @@ import random
 
 def game():
     correct_answers = 0
-    for i in range(3):
+    number_of_questions = int(input("Hur många uppgifter vill du lösa? "))
+    for i in range(number_of_questions):
         a = random.randint(1, 10)
         b = random.randint(1, 10)
         answer = input(f"{a}+{b}=")
@@ -44,7 +45,7 @@ def game():
         else:
             print(f"Fel... Det blir {a+b}")
     print("---")
-    print(f"Du fick {correct_answers} av 3 rätt.")
+    print(f"Du fick {correct_answers} av {number_of_questions} rätt.")
 
 
 if __name__ == '__main__':
