@@ -34,9 +34,10 @@ import random
 def game():
     correct_answers = 0
     number_of_questions = int(input("Hur många uppgifter vill du lösa? "))
+    max_value = int(input("Hur stort får det största talet vara? "))
     for i in range(number_of_questions):
-        a = random.randint(1, 10)
-        b = random.randint(1, 10)
+        a = random.randint(1, max_value)
+        b = random.randint(1, max_value)
         answer = input(f"{a}+{b}=")
         number = int(answer)
         if number == a + b:
