@@ -35,14 +35,25 @@ def main():
     "Bodil": "555-666-789"
     }
 
-    number_of_persons_in_pb = len(people)
-    print(f"Det finns {number_of_persons_in_pb} personer i telefonboken")
-    vem = input("Vem vill du ringa? ")
-    if vem not in people:
-        print("Sorry hörru, vet ej vem detta är. Har endast VIP i min katalog")
-    else:
-        number = people[vem]
-        print(f"Numret till {vem} är {number}")
+    print(f"Det finns {len(people)} personer i telefonboken")
+    print("1. Vill du slå upp ett nummer?")
+    print("2. Vill du lägga till/skriva över ett nummer?")
+    choice = input(">>")
+
+    if choice == "1":
+        vem = input("Vem vill du ringa? ")
+        if vem not in people:
+            print("Sorry hörru, vet ej vem detta är. Har endast VIP i min katalog")
+        else:
+            number = people[vem]
+            print(f"Numret till {vem} är {number}")
+    if choice == "2":
+        vem = input("Vem vill du lägga till eller skriva över? ")
+        number = input(f"Vad har {vem} för telefonnummer? ")
+        people[vem.capitalize()] = number
+        print(f"Det finns nu {len(people)} personer i telefonboken")
+
 
 if __name__ == '__main__':
     main()
+
