@@ -1,5 +1,5 @@
 """
-20200923
+20200924
 Kristin
 Uppgift 17
 
@@ -48,7 +48,6 @@ def remove_task_from_file(file_name, task_to_remove):
 def main():
 
     while True:
-
         print("")
         print("1. Lista TODO")
         print("2. Lägg till en uppgift")
@@ -58,19 +57,18 @@ def main():
 
         if choice == 1:
             read_file_and_print_on_screen("ex17_todo.txt")
-
         elif choice == 2:
             new_task = input("Ny uppgift: ")
             add_content_to_file("ex17_todo.txt", new_task)
         elif choice == 3:
-            print("Vilket uppgift vill du ta bort? (ange siffra)")
+            print("Vilken uppgift vill du ta bort? (ange siffra)")
             task_to_remove = input(">>")
             remove_task_from_file("ex17_todo.txt", task_to_remove)
         elif choice == 4:
             print("\nProgrammet avslutas..")
             quit()
         else:
-            print("\nFelaktigt val. Ange 1, 2, 3 eller 4.")
+            print("\nFelaktigt val! Ange 1, 2, 3 eller 4.")
             continue
 
 
