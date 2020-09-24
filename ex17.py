@@ -20,17 +20,28 @@ Diskutera hur ni ska lösa uppgiften först tillsammans.
 """
 
 
-def read_file(file_name):
+def read_file_and_print_on_screen(file_name):
     f = open(file_name, 'r')
-    print("\n__This is your TODO list__")
-    for row in f:
-        print(row.rstrip())
+    print("\n*** TODO list ***")
+    for task_number, row in enumerate(f):
+        print(task_number + 1, row.strip().capitalize())
     f.close()
 
 
-def write_to_file(file_name, content):
+def add_content_to_file(file_name, content):
     f = open(file_name, 'a')
-    f.write(content + "\n")
+    f.write(content.lower() + "\n")
+    f.close()
+
+
+def remove_task_from_file(file_name, task_to_remove):
+    f = open(file_name, 'r')
+    lines = f.readlines()
+
+    f = open(file_name, 'w')
+    for row_number, task in enumerate(lines):
+        if row_number != int(task_to_remove) - 1:
+            f.write(task.strip("\n") + "\n")
     f.close()
 
 
@@ -43,19 +54,24 @@ def main():
         print("2. Lägg till en uppgift")
         print("3. Ta bort uppgift")
         print("4. Avbryt programmet")
-        choice = int(input("Ditt val: "))
+        choice = int(input(">> "))
 
         if choice == 1:
-            read_file("ex17_todo.txt")
+            read_file_and_print_on_screen("ex17_todo.txt")
 
         elif choice == 2:
             new_task = input("Ny uppgift: ")
-            write_to_file("ex17_todo.txt", new_task)
+            add_content_to_file("ex17_todo.txt", new_task)
         elif choice == 3:
-            pass
+            print("Vilket uppgift vill du ta bort? (ange siffra)")
+            task_to_remove = input(">>")
+            remove_task_from_file("ex17_todo.txt", task_to_remove)
         elif choice == 4:
             print("\nProgrammet avslutas..")
             quit()
+        else:
+            print("\nFelaktigt val. Ange 1, 2, 3 eller 4.")
+            continue
 
 
 if __name__ == '__main__':
