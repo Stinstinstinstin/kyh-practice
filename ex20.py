@@ -142,7 +142,7 @@ def gameLoop():
         if x1 == foodx and y1 == foody:
             foodx = round(random.randrange(0, dis_width - snake_block) / 10.0) * 10.0
             foody = round(random.randrange(0, dis_height - snake_block) / 10.0) * 10.0
-            length_of_snake += 1
+            length_of_snake += 2
 
         clock.tick(snake_speed)
 
