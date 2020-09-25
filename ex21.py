@@ -17,8 +17,12 @@ Tips:
 import json
 from pprint import pprint
 
-
+sum = 0
 with open("ex21_massadata.json", 'r') as f:
     data = json.load(f)
-    pprint(data)
+    #pprint(data)
+
+for entry in data['entries']:
+    sum += entry['total']
+print(f"Summa: {sum}")
 
