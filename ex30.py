@@ -52,9 +52,9 @@ print(f"Summan av talen: {summa}")
 
 
 # [ <first element to include> : <first element to exclude> : <step> ]
-reversed_numbers = number[::-1]
+reversed_numbers = str(number[::-1]).replace('[', '').replace(']', '')
 print(f"Talen baklänges: {reversed_numbers}")
 
-reversed_numbers2 = list(reversed(number))
+reversed_numbers2 = str(list(reversed(number))).replace('[', '').replace(']', '')
 print(f"Talen baklänges: {reversed_numbers2}")
 
