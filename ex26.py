@@ -34,11 +34,32 @@ ett API där man kan göra sökningar.
 """
 
 import requests
-from pprint import pprint
+# from pprint import pprint
 
 # land_before_time = "http://www.omdbapi.com/?t=Land+Before+Time&apikey=9f6d550c"
 
-open_movie_db = "http://www.omdbapi.com/"
+"""open_movie_db = "http://www.omdbapi.com/"
 r = requests.get(open_movie_db, params={"t": "The Land Before Time", "apikey": "9f6d550c"})
 data = r.json()
-pprint(data)
+pprint(data)"""
+
+
+def main():
+    title = input("Vilken film vill du slå upp? ")
+
+    open_movie_db = "http://www.omdbapi.com/"
+    r = requests.get(open_movie_db, params={"t": {title}, "apikey": "9f6d550c"})
+    data = r.json()
+    # pprint(data)
+
+    print("")
+    print("*** Resultat från OMDB! ***")
+    print(f"{data['Title']} ({data['Year']}) regisserades av {data['Director']}.")
+    print(f"Skådisar: {data['Actors']}")
+    print(f"IMDB-betyg: {data['imdbRating']}")
+    print(f"Awards: {data['Awards']}")
+    print(f"Längd: {data['Runtime']}")
+
+
+if __name__ == '__main__':
+    main()
