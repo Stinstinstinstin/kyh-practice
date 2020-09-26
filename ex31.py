@@ -36,14 +36,16 @@ summa = sum(number)
 print(f"Summan av talen: {summa}")
 
 # [ <first element to include> : <first element to exclude> : <step> ]
-reversed_numbers = str(number[::-1]).replace('[', '').replace(']', '')
-print(f"Talen baklänges: {reversed_numbers}")
+# reversed_numbers = str(number[::-1]).replace('[', '').replace(']', '')
+reversed_numbers = [str(i) for i in number[::-1]]
+print(f"Talen baklänges: {', '.join(reversed_numbers)}")
 
-reversed_numbers2 = str(list(reversed(number))).replace('[', '').replace(']', '')
-print(f"Talen baklänges: {reversed_numbers2}")
+# reversed()
+reversed_numbers2 = [str(i) for i in list(reversed(number))]
+print(f"Talen baklänges: {', '.join(reversed_numbers2)}")
 
-odd_numbers = str([i for i in number if i % 2 != 0]).replace('[', '').replace(']', '')
-even_numbers = str([i for i in number if i % 2 == 0]).replace('[', '').replace(']', '')
+odd_numbers = [str(i) for i in number if i % 2 != 0]
+even_numbers = [str(i) for i in number if i % 2 == 0]
 
-print(f"Udda tal: {odd_numbers}")
-print(f"Jämna tal: {even_numbers}")
+print(f"Udda tal: {', '.join(odd_numbers)}")
+print(f"Jämna tal: {', '.join(even_numbers)}")
