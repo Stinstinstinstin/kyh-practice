@@ -35,18 +35,31 @@ Tips: det går bra att använda -01 och -31 för att inkludera hela månaden,
 import requests
 
 
-r = requests.get('https://proagile.se/api/publicEvents')
-data = r.json()
+def main():
 
-for i in range(len(data)):
-    course = data[i]['courseName']
-    start_date = data[i]['startDate']
-    end_date = data[i]['endDate']
+    r = requests.get('https://proagile.se/api/publicEvents')
+    data = r.json()
 
-    if start_date[5:7] == "10":
-        print("")
-        # högerställd vänsterställd
-        print(f'{"Kursnamn:":>12} {course:<100}')
-        print(f'{"Startdatum:":>12} {start_date:<100}')
-        print(f'{"Slutdatum:":>12} {end_date:<100}')
+    print("\nSök efter kurs som startar ett visst datum\n")
+    year = input("År (2020-2022): ")
+    month = input("Månad (01-12): ")
+    print(f"Letar efter kurser som startar någon gång {year}-{month}-01 till {year}-{month}-31\n")
 
+    found_course = False
+    for i in range(len(data)):
+        course = data[i]['courseName']
+        start_date = data[i]['startDate']
+        end_date = data[i]['endDate']
+
+        if start_date[0:4] == year and start_date[5:7] == month:
+            print("")
+            print(f'{"Kursnamn:":>12} {course:<100}')
+            print(f'{"Startdatum:":>12} {start_date:<100}')
+            print(f'{"Slutdatum:":>12} {end_date:<100}')
+            found_course = True
+    if not found_course:
+        print("Hittade tyvärr inga kurser.")
+
+
+if __name__ == '__main__':
+    main()
