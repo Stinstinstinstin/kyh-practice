@@ -33,4 +33,12 @@ ett API där man kan göra sökningar.
          Längd: 117 min
 """
 
-land_before_time = "http://www.omdbapi.com/?t=Land+Before+Time&apikey=9f6d550c"
+import requests
+from pprint import pprint
+
+# land_before_time = "http://www.omdbapi.com/?t=Land+Before+Time&apikey=9f6d550c"
+
+open_movie_db = "http://www.omdbapi.com/"
+r = requests.get(open_movie_db, params={"t": "The Land Before Time", "apikey": "9f6d550c"})
+data = r.json()
+pprint(data)
