@@ -30,11 +30,31 @@ Tips 2: Det går att lösa "Talen baklänges" på två sätt: det lätta sättet
 *numera kan det vara bokstäver i sifferdelen också. Det gör ont att se men det är moderna tider!
 """
 
-#30.1
+# 30.1
 registration_number = input("Ange regnr: ")
 letters = registration_number[0:3]
 numbers = registration_number[3:6]
 
 print(f"Bokstävsgrupp: {letters}")
 print(f"Siffergrupp: {numbers}")
+
+# 30.2
+number = input("Ange tal med komma emellan: ")
+number = number.split(',')
+first_number = number[0]
+last_number = number[-1]
+print(f"Första talet: {first_number}")
+print(f"Sista talet: {last_number}")
+
+number = [int(i) for i in number]
+summa = sum(number)
+print(f"Summan av talen: {summa}")
+
+
+# [ <first element to include> : <first element to exclude> : <step> ]
+reversed_numbers = number[::-1]
+print(f"Talen baklänges: {reversed_numbers}")
+
+reversed_numbers2 = list(reversed(number))
+print(f"Talen baklänges: {reversed_numbers2}")
 
