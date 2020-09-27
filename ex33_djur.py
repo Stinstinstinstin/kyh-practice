@@ -13,7 +13,7 @@ OUTPUT_PATH = Path("ex33_djur.html")
 TEMPLATE_PATH = Path('djur_template.html')
 
 
-class Djur():
+class Djur:
     def __init__(self, name, carnivore, wiki_url):
         self.name = name
         self.carnivore = carnivore
