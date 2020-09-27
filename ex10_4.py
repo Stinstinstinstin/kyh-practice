@@ -12,9 +12,17 @@ Skriv flera program (t.ex ug10_1.py, ug10_2.py osv) som skriver ut:
 """
 
 print("\nSumman av talen 7 tom 1000")
+print("____+=____")
 summa = 0
 for i in range(7, 1000+1):
     summa += i
 print(summa)
 
+print("____sum(range()____")
 print(sum(range(7, 1000+1)))
+
+print("____sum()____")
+ls = []
+for i in range(7, 1000+1):
+    ls.append(i)
+print(sum(ls))
