@@ -12,7 +12,17 @@ som finns i strängen. Tips: "a" in "abcd" är True!
     runners_in_order = “Lisa Lasse Louise Leopold Lova Love Lennart Lena Lisette Linus”.split()
     vem = input(“Ange löpare du söker placering för”)
 """
-#15.1 ?
+
+#15.1
+def wordcount(text):
+    return len(text.split())
+
+
+if __name__ == '__main__':
+    text = input("Skriv in en text:")
+    print(f"I den texten hittade jag {wordcount(text)} ord. Byeeee!")
+
+
 
 #15.2
 lorem_ipsum = """Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
