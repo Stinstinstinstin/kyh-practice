@@ -45,6 +45,7 @@ def test_calc_max_equal_input_pos_1_2_lower():
 def test_calc_max_equal_input_pos_0_2_lower():
     assert calc_max(1, 9, 1) == 9
 
+
 def test_calc_max_equal_input_pos_0_1_higher():
     assert calc_max(9, 9, 1) == 9
 
@@ -59,6 +60,11 @@ def test_calc_max_equal_input_pos_0_2_higher():
 
 def test_calc_max_zero_input():
     assert calc_max(0, 0, 0) == 0
+
+
+def test_calc_max_negative_input():
+    assert calc_max(-10, -10, -20) == -10
+
 
 # calc max 2
 def test_calc_max2_first_pos():
@@ -94,6 +100,7 @@ def test_calc_max2_equal_input_pos_1_2_lower():
 def test_calc_max2_equal_input_pos_0_2_lower():
     assert calc_max2(1, 9, 1) == 9
 
+
 def test_calc_max2_equal_input_pos_0_1_higher():
     assert calc_max2(9, 9, 1) == 9
 
@@ -108,6 +115,11 @@ def test_calc_max2_equal_input_pos_0_2_higher():
 
 def test_calc_max2_zero_input():
     assert calc_max2(0, 0, 0) == 0
+
+
+def test_calc_max2_negative_input():
+    assert calc_max2(-10, -10, -20) == -10
+
 
 # calc sum
 def test_calc_sum():
