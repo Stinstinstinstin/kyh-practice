@@ -19,6 +19,8 @@ def calc_max(a, b, c):
         return b
     elif c > a and c > b:
         return c
+    else:
+        return a
 
 max_value = calc_max(5, 8, 2)
 print(max_value)
