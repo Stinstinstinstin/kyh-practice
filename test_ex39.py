@@ -63,7 +63,7 @@ def test_calc_max_zero_input():
 
 
 def test_calc_max_negative_input():
-    assert calc_max(-10, -10, -20) == -10
+    assert calc_max(-10, -100, -20) == -10
 
 
 # calc max 2
@@ -118,7 +118,7 @@ def test_calc_max2_zero_input():
 
 
 def test_calc_max2_negative_input():
-    assert calc_max2(-10, -10, -20) == -10
+    assert calc_max2(-10, -100, -20) == -10
 
 
 # calc sum
