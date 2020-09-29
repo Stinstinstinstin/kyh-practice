@@ -47,11 +47,11 @@ print(f"Antal versaler: {check_if_upper(alphabet)}")
 print("3. Skriv en funktion som avgör om ett tal ligger mellan två andra tal.")
 
 
-def check_integer_relation(a, b, c):
-    if b < a < c or c < a < b:
+def check_integer_relation(value, min, max):
+    if min < value < max:
         return True
     else:
         return False
 
 
-print(check_integer_relation(4, 5, 5))
+print(check_integer_relation(value = 4, min = 5, max = 5))
