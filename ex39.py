@@ -11,17 +11,16 @@ Repetition och träning på funktioner!
 
 print("1. Skriv en funktion som beräknar maximum (=största värdet) av tre tal")
 
-
+# Notera att: a > (b and c) inte är en hit ;)
 def calc_max(a, b, c):
-    if a > (b and c):
+    if a > b and a > c:
         return a
-    elif b > (a and c):
+    elif b > a and b > c:
         return b
-    elif c > (a and b):
+    elif c > a and c > b:
         return c
 
-
-max_value = calc_max(1, 100, 3)
+max_value = calc_max(5, 8, 2)
 print(max_value)
 
 some_numbers = [10, 1, 9]
